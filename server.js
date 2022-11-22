@@ -41,7 +41,12 @@ app.get('/BSD', function(req, res) {
     });
 
   });
-
+  app.get("./layouts/stduents", (req, res) => {
+      res.render("stduents");
+      //res.json(dataservice);
+    }).catch(err=> res.render({message:"no results"}));
+  
+  
   app.use((req, res) => {
     res.status(404).send("Sorry this page does not loaded");
   });
@@ -53,3 +58,5 @@ app.get('/BSD', function(req, res) {
   }).catch(function(err){
     console.log("Unable to start server: " + err);
   });
+
+  
